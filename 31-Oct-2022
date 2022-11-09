@@ -1,0 +1,36 @@
+
+CODE#1:
+
+fetch('API_ENDPOINT', options)  
+      .then(function(res) {
+        return res.json();
+       })
+      .then(function(resJson) {
+        return resJson;
+       })
+I structured my options object as follows:
+
+CODE#2:  
+
+  var options = {  
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Origin': '',
+        'Host': 'api.producthunt.com'
+      },
+      body: JSON.stringify({
+        'client_id': '(API KEY)',
+        'client_s
+
+CODE #3:
+
+var options = {  
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Origin': '',
+        'Host': 'api.producthunt.com'
+      },
