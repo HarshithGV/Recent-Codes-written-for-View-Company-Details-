@@ -1,0 +1,41 @@
+import React from 'react';
+import './App.css';
+
+const movie = (props) =>
+{
+    return (
+        <li className ={classes.Companies} >
+            <h2>props.company_groupname</h2>
+            <h2>props.company_countrycode</h2>
+            <h2>props.company_pincode</h2>
+            <h2>props.isCustomer</h2>
+            <h2>props.isPartner</h2>
+            <h2>props.partner_id</h2>
+            <h2>props.isSuperPartner</h2>
+            <h2>props.shortcode</h2>
+            <h2>props.ispartner</h2>
+            <h2>props.partnerid</h2>
+            <h2>props.super_partnerId</h2>
+            <h2>props.maxLocation</h2>
+            <h2>props.maxPatients</h2>
+            <h2>props.account_id</h2>
+            <h2>props.partner_logo</h2>
+            <h2>props.partner_promo1</h2>
+            <h2>props.partner_promo2</h2>
+            <h2>props.partner_promo3</h2>
+            <h2>props.hospital_logo</h2>
+            <h2>props.hospital_promo1</h2>
+            <h2>props.hospital_promo2</h2>
+            <h2>props.hospital_promo3</h2>
+            <h2>props.partner_banner1</h2>
+            <h2>props.partner_banner2</h2>
+            <h2>props.partner_banner3</h2>
+            <h2>props.has_opd</h2>
+            <h2>props.companyName</h2>
+            <h2>props.companyId</h2>
+            
+        </li>
+    )
+}
+
+export default Companies;
