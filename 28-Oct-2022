@@ -1,0 +1,69 @@
+import React from "react";
+import './App.css';
+import './Companies.js';
+
+// Enables CORS
+const cors = require('cors');
+App.use(cors({ origin: true }));
+
+
+function App() {
+
+
+
+
+  const [company,setCompanies] = useState([]);
+
+  function fetchCompaniesApi()
+  {
+    fetch('https://admin.swifttapp.com/CompaniesController?company_name=san&indicator=MODE_2&csrfPreventionSalt=v8XvmMqjIla7wrgDlz9WMv1c5aMWCg').then(response => {
+       return response.json();
+
+    }).then(data => {
+      const companydetails = data.results.map(companyData => {
+      return {
+        company_groupname : companyData.company_groupname,
+        company_countrycode :companyData.company_countrycode,
+       company_pinocde : companyData .company_pincode,
+        iscustomer : companyData.isCustomer,
+        isPartner : companyData.isPartner,
+        partner_id : companyData.partner_id,
+        isSuperPartner:companyData.isSuperPartner,
+        shortcode:companyData.shortcode,
+        ispartner:companyData.ispartner,
+        partnerid:companyData.partnerid,
+        super_partnerId:companyData .super_partnerId,
+        maxLocation:companyData.maxLocation,
+        maxPatients:companyData .maxPatients,
+        account_id:companyData.account_id,
+        partner_logo:companyData.partner_logo,
+        partner_promo1:companyData.partner_promo1,
+        partner_promo2:companyData .partner_promo2,
+        partner_promo3:companyData .partner_promo3,
+        hospital_logo:companyData .hospital_logo,
+        hospital_promo1:companyData .hospital_promo1,
+        hospital_promo2:companyData .hospital_promo2,
+        hospital_promo3:companyData .hospital_promo3,
+        partner_banner1:companyData .partner_banner1,
+        partner_banner2:companyData .partner_banner2,
+        partner_banner3:companyData .partner_banner3,
+        has_opd:companyData.has_opd,
+        companyName:companyData .companyName,
+        companyId:companyData .companyId,
+      };
+
+      });
+      setCompanies (data.results);
+    })
+  }
+ 
+
+  return (
+ 
+      <button onClick={fetchCompaniesApi}>fetch company</button>
+ 
+  );
+
+}
+
+export default App;
